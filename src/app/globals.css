@@ -16,12 +16,14 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer components {
+  .button-text {
+    @apply text-white text-center text-2xl font-semibold tracking-wide cursor-pointer;
+  }
+  .button-ghost {
+    @apply bg-white bg-opacity-10 button-text border-2 rounded-lg inline-flex px-8 py-3 items-center justify-center;
+  }
+  .button {
+    @apply bg-[#4C5FD5] hover:bg-white hover:text-black transition-colors duration-200 button-text rounded-lg inline-flex px-8 py-3 items-center justify-center;
+  }
 }
